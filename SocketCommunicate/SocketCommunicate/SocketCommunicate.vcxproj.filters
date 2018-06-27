@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\Socket">
+      <UniqueIdentifier>{2c409322-6580-430f-bcf0-22da5d345bfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Socket\ServerSocket">
+      <UniqueIdentifier>{21bfc51d-4b88-41ef-95e3-a92a94aa4614}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Socket\I_Socket.h">
+      <Filter>src\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Socket\ServerSocket\ServerSocket.h">
+      <Filter>src\Socket\ServerSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SendTypeCollection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Socket\SocketUtil.h">
+      <Filter>src\Socket</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Socket\ServerSocket\ServerSocket.cpp">
+      <Filter>src\Socket\ServerSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Socket\SocketUtil.cpp">
+      <Filter>src\Socket</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
