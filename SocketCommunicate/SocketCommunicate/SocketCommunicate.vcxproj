@@ -76,6 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -94,6 +95,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -115,13 +118,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\CommunicateThread\CommunicateThread.h" />
     <ClInclude Include="..\src\SendTypeCollection.h" />
+    <ClInclude Include="..\src\Server\Server.h" />
+    <ClInclude Include="..\src\Socket\ClientSocket\ClientSocket.h" />
     <ClInclude Include="..\src\Socket\I_Socket.h" />
     <ClInclude Include="..\src\Socket\ServerSocket\ServerSocket.h" />
+    <ClInclude Include="..\src\Socket\Socket.h" />
     <ClInclude Include="..\src\Socket\SocketUtil.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\CommunicateThread\CommunicateThread.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Server\Server.cpp" />
+    <ClCompile Include="..\src\Socket\ClientSocket\ClientSocket.cpp" />
     <ClCompile Include="..\src\Socket\ServerSocket\ServerSocket.cpp" />
+    <ClCompile Include="..\src\Socket\Socket.cpp" />
     <ClCompile Include="..\src\Socket\SocketUtil.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
