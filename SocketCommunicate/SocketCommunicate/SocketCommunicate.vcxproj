@@ -118,7 +118,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\CommunicateThread\CommunicateThread.h" />
     <ClInclude Include="..\src\SendTypeCollection.h" />
     <ClInclude Include="..\src\Server\Server.h" />
     <ClInclude Include="..\src\Socket\ClientSocket\ClientSocket.h" />
@@ -128,7 +127,6 @@
     <ClInclude Include="..\src\Socket\SocketUtil.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\CommunicateThread\CommunicateThread.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Server\Server.cpp" />
     <ClCompile Include="..\src\Socket\ClientSocket\ClientSocket.cpp" />

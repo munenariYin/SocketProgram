@@ -13,7 +13,8 @@ class I_Socket
 {
 public:
 	I_Socket(){}
-	virtual ~I_Socket(){}
+	virtual ~I_Socket() {}
+
 
 	// ソケットの生成。 WSAStartup ～ socketまで
 	bool virtual SetUp(int _addressFamily, int _type, int _protocol) = 0;

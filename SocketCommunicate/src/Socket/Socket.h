@@ -2,16 +2,23 @@
 #define __Socket_h__
 
 
+enum class SockErrorType
+{
+	COMPLETE,
+	ERROR_1
+};
+
 // ================================================
 // SOCKETのラップクラス
 // ================================================
+
 class Socket
 {
 public:
 	Socket(){}
 	~Socket()
 	{
-		closesocket(this->sock);
+		//closesocket(this->sock);
 	}
 
 	// /////////////////////////////////////////////
@@ -29,7 +36,7 @@ public:
 	bool Listen(int _backLog);
 	// connect()。接続を待つ。
 	bool Connect();
-	// accept()。引数のソケットと接続を図る
+	// accept()。引数のソケットとの接続を受け付ける。
 	bool Accept(Socket& _targetSock);
 	// recv()。文字列の受け取り。
 	int Receive(std::string& _sendData, int _sendSize, int _flags);
@@ -65,9 +72,13 @@ public:
 		this->addr = _addr;
 	}
 
+public:
+	static const int MSG_MAX = 1024;
+
 private:
 	SOCKET sock;
 	sockaddr_in addr;
+	bool isBlocking = false;
 	bool isAccepting = false;
 	bool isConnecting = false;
 };

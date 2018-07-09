@@ -80,7 +80,6 @@ bool ServerSocket::Connect()
 	//	}
 
 
-
 	//	std::thread communicateThread = [](SOCKET _clientSocket)
 	//	{
 	//		const int MSG_SIZE = 1024;

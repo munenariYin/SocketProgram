@@ -9,10 +9,9 @@
 
 int main()
 {
-	WSADATA wsaData;
 	Server server;
 
-	if (!server.Init(49152))
+	if (!server.Init(50000))
 	{
 		fprintf(stderr, "Failed in initialize.\n");
 		return 0;
@@ -20,5 +19,4 @@ int main()
 
 	server.Update();
 	server.Release();
-
 }

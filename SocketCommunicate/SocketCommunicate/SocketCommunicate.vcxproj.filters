@@ -17,9 +17,6 @@
     <Filter Include="src\Server">
       <UniqueIdentifier>{7588f297-23db-44f6-bb9e-0d38317b3778}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\CommunicateThread">
-      <UniqueIdentifier>{8104cfda-5438-4d9b-884a-7b640d3d113f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Socket\I_Socket.h">
@@ -43,9 +40,6 @@
     <ClInclude Include="..\src\Socket\Socket.h">
       <Filter>src\Socket</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\CommunicateThread\CommunicateThread.h">
-      <Filter>src\CommunicateThread</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Socket\ServerSocket\ServerSocket.cpp">
@@ -65,9 +59,6 @@
     </ClCompile>
     <ClCompile Include="..\src\Socket\Socket.cpp">
       <Filter>src\Socket</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CommunicateThread\CommunicateThread.cpp">
-      <Filter>src\CommunicateThread</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

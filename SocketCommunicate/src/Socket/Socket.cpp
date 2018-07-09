@@ -52,6 +52,7 @@ bool Socket::Connect()
 		SocketUtil::SockError(this->sock, "connect()");
 		return false;
 	}
+	return true;
 }
 
 bool Socket::Accept(Socket& _targetSock)
@@ -62,14 +63,18 @@ bool Socket::Accept(Socket& _targetSock)
 	_targetSock.sock = accept(this->sock, (struct sockaddr*)&clientAddr, &len);
 	if (_targetSock.sock == INVALID_SOCKET)	return false;
 	_targetSock.addr = addr;
+	return true;
 }
 
 int Socket::Receive(std::string& _recvData,  int _recvSize, int _flags)
 {
 	// ひとまずchar*で文字列を受け取るしかない
-	char* recvString = 0;
+	char recvString[MSG_MAX] = "";
+	// ★すぐ直す案件。ioctlsocketでノンブロッキングにしているためエラー落ちする。何も来ずに-1が返った時の対処をするように！！！
 	int recvLength = recv(this->sock, recvString, _recvSize, _flags);
+	if (recvLength == SOCKET_ERROR) return SOCKET_ERROR;
 	// 受け取った文字列をstringのデータに追加する。
+	recvString[recvLength] = '\0';
 	_recvData += recvString;
 	return recvLength;
 }
@@ -81,6 +86,8 @@ int Socket::Send(std::string& _sendData, int _sendSize, int _flags)
 
 void Socket::SetBlocking(bool _isBlocking)
 {
+	this->isBlocking = _isBlocking;
+
 	unsigned long val;
 	// ブロッキングすると0に、そうでなければ0以外に
 	if (_isBlocking) val = 0;
